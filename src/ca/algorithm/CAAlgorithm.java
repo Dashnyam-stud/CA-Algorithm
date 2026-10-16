@@ -3,85 +3,72 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ca.algorithm;
-import java.time.LocalDateTime;
+
+import java.util.Scanner;
+
 /**
  *
  * @author ddash
  */
 public class CAAlgorithm {
 
-    //Created food item - section 
-    public class FoodItem {
-    private String name;
-    private double weight; // by gram
-    private String bestBeforeDate; // maximium 2 weeks
-    private LocalDateTime timeAdded;
+    public class Main {
 
-    //Constructor
-    public FoodItem(String name, double weight, String bestBeforeDate) {
-        this.name = name;
-        this.weight = weight;
-        this.bestBeforeDate = bestBeforeDate;
-        this.timeAdded = LocalDateTime.now();
+        public static void main(String[] args) {
+
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("================================");
+            System.out.println(" Fast Food Storage Application");
+            System.out.println("================================");
+
+            boolean running = true;
+
+            while (running) {
+                System.out.println("\n1. Add food item");
+                System.out.println("2. Remove food item");
+                System.out.println("3. Display food items");
+                System.out.println("4. Peek top food item");
+                System.out.println("5. Search food item");
+                System.out.println("6. Exit");
+
+                System.out.print("Choose an option: ");
+
+                String choice = input.nextLine();
+
+                switch (choice) {
+                    case "1":
+                        System.out.println("Add operation will be added.");
+                        break;
+
+                    case "2":
+                        System.out.println("Remove operation will be added.");
+                        break;
+
+                    case "3":
+                        System.out.println("Display operation will be added.");
+                        break;
+
+                    case "4":
+                        System.out.println("Peek operation will be added.");
+                        break;
+
+                    case "5":
+                        System.out.println("Search operation will be added.");
+                        break;
+
+                    case "6":
+                        running = false;
+                        System.out.println("Application closed.");
+                        break;
+
+                    default:
+                        System.out.println("Invalid option. Try again.");
+                }
+            }
+
+            input.close();
+        }
     }
 
-    // Getter and Setter methods 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public String getBestBeforeDate() {
-        return bestBeforeDate;
-    }
-
-    public void setBestBeforeDate(String bestBeforeDate) {
-        this.bestBeforeDate = bestBeforeDate;
-    }
-
-    public LocalDateTime getTimeAdded() {
-        return timeAdded;
-    }
-
-    @Override
-    public String toString() {
-        return "FoodItem [Name=" + name + ", Weight=" + weight + "g, Best Before=" + bestBeforeDate + ", Time Added=" + timeAdded + "]";
-    }
-}
-    //Storage management - section
-    public interface StorageOperations {
-    // Add food
-    boolean addFood(String name, double weight, String bestBeforeDate);
-    
-    // Remove item (deque)
-    FoodItem removeFood();
-    
-    // Check first item
-    FoodItem peekFood();
-    
-    // Search food 
-    FoodItem searchFood(String name);
-    
-    // Display everything from storage
-    void displayStorage();
-    
-    // Check if it's full
-    boolean isFull();
-    
-    // Check if it's enpty
-    boolean isEmpty();
- }
-    
-    
 }
