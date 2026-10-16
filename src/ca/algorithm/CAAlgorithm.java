@@ -4,6 +4,9 @@
  */
 package ca.algorithm;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import java.util.Scanner;
 
 /**
@@ -11,6 +14,46 @@ import java.util.Scanner;
  * @author ddash
  */
 public class CAAlgorithm {
+
+    public class FoodItem {
+
+        private String name;
+        private double weight;
+        private LocalDate bestBeforeDate;
+        private LocalDateTime timeAdded;
+
+        public FoodItem(String name, double weight,
+                LocalDate bestBeforeDate) {
+
+            this.name = name;
+            this.weight = weight;
+            this.bestBeforeDate = bestBeforeDate;
+            this.timeAdded = LocalDateTime.now();
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getWeight() {
+            return weight;
+        }
+
+        public LocalDate getBestBeforeDate() {
+            return bestBeforeDate;
+        }
+
+        public LocalDateTime getTimeAdded() {
+            return timeAdded;
+        }
+
+        public void displayInfo() {
+            System.out.println("Food name: " + name);
+            System.out.println("Weight: " + weight + " grams");
+            System.out.println("Best before: " + bestBeforeDate);
+            System.out.println("Time added: " + timeAdded);
+        }
+    }
 
     public class Main {
 
