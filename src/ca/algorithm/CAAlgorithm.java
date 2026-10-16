@@ -10,13 +10,14 @@ import java.time.LocalDateTime;
  */
 public class CAAlgorithm {
 
+    //Created food item - section 
     public class FoodItem {
     private String name;
     private double weight; // by gram
     private String bestBeforeDate; // maximium 2 weeks
     private LocalDateTime timeAdded;
 
-    // Байгуулагч (Constructor)
+    //Constructor
     public FoodItem(String name, double weight, String bestBeforeDate) {
         this.name = name;
         this.weight = weight;
@@ -24,7 +25,7 @@ public class CAAlgorithm {
         this.timeAdded = LocalDateTime.now();
     }
 
-    // Getter болон Setter методууд
+    // Getter and Setter methods 
     public String getName() {
         return name;
     }
@@ -58,5 +59,29 @@ public class CAAlgorithm {
         return "FoodItem [Name=" + name + ", Weight=" + weight + "g, Best Before=" + bestBeforeDate + ", Time Added=" + timeAdded + "]";
     }
 }
+    //Storage management - section
+    public interface StorageOperations {
+    // Add food
+    boolean addFood(String name, double weight, String bestBeforeDate);
+    
+    // Remove item (deque)
+    FoodItem removeFood();
+    
+    // Check first item
+    FoodItem peekFood();
+    
+    // Search food 
+    FoodItem searchFood(String name);
+    
+    // Display everything from storage
+    void displayStorage();
+    
+    // Check if it's full
+    boolean isFull();
+    
+    // Check if it's enpty
+    boolean isEmpty();
+ }
+    
     
 }
