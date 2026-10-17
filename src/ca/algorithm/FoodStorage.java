@@ -34,7 +34,20 @@ public class FoodStorage {
         System.out.println("Food added successfully.");
         return true;
     }
+    
+    public FoodItem removeFood() {
+    if (isEmpty()) {
+        System.out.println("Storage is empty!");
+        return null;
+    }
 
+    FoodItem removedItem = items[size - 1];
+    items[size - 1] = null;
+    size--;
+
+    System.out.println("Food removed successfully.");
+    return removedItem;
+}
     public boolean isFull() {
         return size == CAPACITY;
     }

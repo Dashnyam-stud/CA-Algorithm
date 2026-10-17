@@ -84,9 +84,12 @@ public class CAAlgorithm {
                     break;
 
                 case "2":
-                    System.out.println(
-                        "Remove operation will be added."
-                    );
+                    FoodItem removed = storage.removeFood();
+
+                    if (removed != null) {
+                        System.out.println("Removed food: "
+                                + removed.getName());
+                    }
                     break;
 
                 case "3":
