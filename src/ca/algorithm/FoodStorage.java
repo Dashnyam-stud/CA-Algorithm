@@ -81,6 +81,24 @@ public class FoodStorage {
         return topFood;
     }
 
+    public FoodItem searchFood(String searchName) {
+        if (isEmpty()) {
+            System.out.println("Storage is empty!");
+            return null;
+        }
+
+        for (int i = size - 1; i >= 0; i--) {
+            if (items[i].getName().equalsIgnoreCase(searchName)) {
+                System.out.println("\nFood item found!");
+                items[i].displayInfo();
+                return items[i];
+            }
+        }
+
+        System.out.println("Food item not found.");
+        return null;
+    }
+
     public boolean isFull() {
         return size == CAPACITY;
     }

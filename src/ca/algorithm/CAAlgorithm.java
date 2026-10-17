@@ -103,11 +103,18 @@ public class CAAlgorithm {
                     break;
 
 
+                
                 case "5":
-                    System.out.println(
-                        
-                    );
+                    System.out.print("Enter food name to search: ");
+                    String searchName = input.nextLine().trim();
+
+                    if (searchName.isEmpty()) {
+                        System.out.println("Please enter a food name.");
+                    } else {
+                        storage.searchFood(searchName);
+                    }
                     break;
+
 
                 case "6":
                     running = false;
