@@ -48,6 +48,7 @@ public class FoodStorage {
     System.out.println("Food removed successfully.");
     return removedItem;
     }
+    
     public void displayFoodItems() {
         if (isEmpty()) {
             System.out.println("Storage is empty!");
@@ -66,6 +67,20 @@ public class FoodStorage {
                 + "/" + CAPACITY);
     }
     
+     public FoodItem peekFood() {
+        if (isEmpty()) {
+            System.out.println("Storage is empty!");
+            return null;
+        }
+
+        FoodItem topFood = items[size - 1];
+
+        System.out.println("\n--- Top Food Item ---");
+        topFood.displayInfo();
+
+        return topFood;
+    }
+
     public boolean isFull() {
         return size == CAPACITY;
     }

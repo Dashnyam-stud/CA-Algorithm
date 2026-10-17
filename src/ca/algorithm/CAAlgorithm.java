@@ -97,11 +97,11 @@ public class CAAlgorithm {
                     break;
 
 
+                
                 case "4":
-                    System.out.println(
-                        
-                    );
+                    storage.peekFood();
                     break;
+
 
                 case "5":
                     System.out.println(
