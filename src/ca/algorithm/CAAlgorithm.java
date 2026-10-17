@@ -93,20 +93,19 @@ public class CAAlgorithm {
                     break;
 
                 case "3":
-                    System.out.println(
-                        "Display operation will be added."
-                    );
+                    storage.displayFoodItems();
                     break;
+
 
                 case "4":
                     System.out.println(
-                        "Peek operation will be added."
+                        
                     );
                     break;
 
                 case "5":
                     System.out.println(
-                        "Search operation will be added."
+                        
                     );
                     break;
 
